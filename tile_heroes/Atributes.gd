@@ -21,17 +21,10 @@ func _ready():
 	_speed = int(rand_range(3,4))
 	_range = int(rand_range(1,2))
 	_health = _max_health
-	print("count: ", _count)
-	print("damage: ", _damage)
-	print("health: ", _health)
-	print("speed: ", _speed)
-	print("range: ", _range)
-	print("owner: ", _owner)
-	
 func _get_damage(damage, count):
 	_health -= damage * count
 	while _health <= 0:
 		_count -= 1
 		_health += _max_health
-	print("count: ", _count)
-	print("health: ", _health)
+	get_parent().get_node("count1").set_text(String(_count))
+	get_parent().get_node("ats").text = "Max Health: " + String(get_parent().get_node("Atributes")._max_health) +  "\nHealth: " + String(get_parent().get_node("Atributes")._health) + "\nDamage: " + String(get_parent().get_node("Atributes")._damage) + "\nSpeed: " + String(get_parent().get_node("Atributes")._speed) + "\nRange: " + String(get_parent().get_node("Atributes")._range)

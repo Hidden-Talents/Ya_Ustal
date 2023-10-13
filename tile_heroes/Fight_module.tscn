@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Pathfinder.gd" type="Script" id=1]
 [ext_resource path="res://NinjaAdventure/Actor/Characters/GoldKnight/SpriteSheet.png" type="Texture" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://pixil-frame-0.png" type="Texture" id=13]
 [ext_resource path="res://phase.gd" type="Script" id=14]
 [ext_resource path="res://Atributes.gd" type="Script" id=15]
+[ext_resource path="res://count.gd" type="Script" id=16]
+[ext_resource path="res://atribShow.gd" type="Script" id=17]
 
 [sub_resource type="TileSet" id=1]
 0/name = "TilesetFloor.png 0"
@@ -116,6 +118,20 @@ scale = Vector2( 0.46875, 0.46875 )
 texture = SubResource( 3 )
 region_rect = Rect2( 0, 0, 32, 32 )
 
+[node name="count1" type="Label" parent="Units/Unit"]
+margin_left = 5.0
+margin_top = 6.0
+margin_right = 27.0
+margin_bottom = 20.0
+script = ExtResource( 16 )
+
+[node name="ats" type="RichTextLabel" parent="Units/Unit"]
+margin_left = -84.0
+margin_top = 15.0
+margin_right = 26.0
+margin_bottom = 105.0
+script = ExtResource( 17 )
+
 [node name="Unit2" type="Position2D" parent="Units"]
 position = Vector2( 87, 41 )
 script = ExtResource( 4 )
@@ -136,6 +152,20 @@ position = Vector2( 0, -16 )
 scale = Vector2( 0.46875, 0.46875 )
 texture = SubResource( 3 )
 region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="count1" type="Label" parent="Units/Unit2"]
+margin_left = 5.0
+margin_top = 6.0
+margin_right = 27.0
+margin_bottom = 20.0
+script = ExtResource( 16 )
+
+[node name="ats" type="RichTextLabel" parent="Units/Unit2"]
+margin_left = -4.0
+margin_top = 12.0
+margin_right = 105.0
+margin_bottom = 101.0
+script = ExtResource( 17 )
 
 [node name="NextPhase" type="Button" parent="."]
 margin_left = 224.0
